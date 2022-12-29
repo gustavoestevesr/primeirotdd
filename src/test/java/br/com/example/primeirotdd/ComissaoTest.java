@@ -23,10 +23,20 @@ public class ComissaoTest {
 
     @Test
     public void deve_calcular_20_reais_de_comissao_para_uma_venda_de_200_reais(){        
-        Integer valorVenda = 200; // Preparação
-        Integer valorComissaoEsperada = 20; // Preparação
+        Double valorVenda = 200.0; // Preparação
+        Double valorComissaoEsperada = 20.0; // Preparação
 
-        Integer comissaoCalculada = comissao.calcularComissao(valorVenda); // Ação
+        Double comissaoCalculada = comissao.calcularComissao(valorVenda); // Ação
+
+        Assertions.assertEquals(valorComissaoEsperada, comissaoCalculada); // Confirmação
+    }
+
+    @Test
+    public void deve_calcular_234_11_reais_de_comissao_para_uma_venda_de_1560_70_reais(){        
+        Double valorVenda = 1560.70; // Preparação
+        Double valorComissaoEsperada = 234.11; // Preparação
+
+        Double comissaoCalculada = comissao.calcularComissao(valorVenda); // Ação
 
         Assertions.assertEquals(valorComissaoEsperada, comissaoCalculada); // Confirmação
     }
